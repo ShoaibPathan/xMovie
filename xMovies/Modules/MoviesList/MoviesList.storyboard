@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gCl-qD-UKs">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movies-->
+        <scene sceneID="2s6-3J-38p">
+            <objects>
+                <viewController id="Z5q-zP-yvi" customClass="MoviesListViewController" customModule="xMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2y0-eQ-ehN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Dng-O0-Lxt">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ttt-lT-Lfs">
+                                <rect key="frame" x="10" y="144" width="394" height="718"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rEK-Ld-iXk" firstAttribute="trailing" secondItem="ttt-lT-Lfs" secondAttribute="trailing" constant="10" id="IFP-yR-X1h"/>
+                            <constraint firstItem="rEK-Ld-iXk" firstAttribute="bottom" secondItem="ttt-lT-Lfs" secondAttribute="bottom" id="Rdi-QX-Hzd"/>
+                            <constraint firstItem="Dng-O0-Lxt" firstAttribute="top" secondItem="rEK-Ld-iXk" secondAttribute="top" id="TY5-1N-x4t"/>
+                            <constraint firstItem="Dng-O0-Lxt" firstAttribute="leading" secondItem="rEK-Ld-iXk" secondAttribute="leading" id="bHp-cO-qNq"/>
+                            <constraint firstItem="ttt-lT-Lfs" firstAttribute="leading" secondItem="rEK-Ld-iXk" secondAttribute="leading" constant="10" id="kbD-1Z-lyD"/>
+                            <constraint firstItem="Dng-O0-Lxt" firstAttribute="trailing" secondItem="rEK-Ld-iXk" secondAttribute="trailing" id="m6i-Rs-cXY"/>
+                            <constraint firstItem="ttt-lT-Lfs" firstAttribute="top" secondItem="Dng-O0-Lxt" secondAttribute="bottom" id="yBG-cT-w15"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rEK-Ld-iXk"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Movies" id="9DC-5E-4kB"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Dng-O0-Lxt" id="LaB-Ec-cWP"/>
+                        <outlet property="tableView" destination="ttt-lT-Lfs" id="bVj-ph-gFw"/>
+                        <segue destination="iZP-QG-3EL" kind="show" identifier="movieListToDetail" id="tft-dp-3ww"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gaa-n5-wfT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="995.65217391304361" y="63.616071428571423"/>
+        </scene>
+        <!--movieDetailVC-->
+        <scene sceneID="iww-FY-sLe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovieDetail" referencedIdentifier="movieDetailVC" id="iZP-QG-3EL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zNU-rs-lAn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Owh-Hb-5gQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773" y="20"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mzC-ZK-ViR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gCl-qD-UKs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YP0-78-KHD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Z5q-zP-yvi" kind="relationship" relationship="rootViewController" id="IJ7-qQ-zhs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35I-bn-j8s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85.507246376811594" y="63.616071428571423"/>
+        </scene>
+    </scenes>
+</document>
